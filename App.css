@@ -1,0 +1,325 @@
+/* App.css */
+
+/* --- Global Styling & Fonts --- */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+body {
+  margin: 0;
+  padding: 20px;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #0b1a3a 0%, #0c1f45 100%);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  color: #e0e0e0;
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
+/* --- Main App Container --- */
+.App {
+  width: 100%;
+  max-width: 750px; /* Default max-width */
+  background: #1e293b;
+  /* Slightly increased padding */
+  padding: 35px 45px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4), 0 5px 15px rgba(0,0,0,0.2);
+  border-radius: 16px;
+  text-align: center;
+  border: 1px solid #313c52;
+  transition: max-width 0.4s ease-in-out, padding 0.4s ease-in-out; /* Add padding to transition */
+}
+
+/* --- Headings --- */
+h1 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #ffffff;
+  /* Reduced bottom margin slightly */
+  margin-bottom: 25px;
+  letter-spacing: 0.5px;
+  padding-bottom: 10px;
+   /* Optional: Add a subtle gradient underline to main title */
+  /* border-bottom: 2px solid; */
+  /* border-image-slice: 1; */
+  /* border-image-source: linear-gradient(to right, #6366f1, #818cf8); */
+}
+
+h2 {
+  font-size: 1.4rem; /* Slightly smaller section titles */
+  font-weight: 600;
+  color: #c6c9fc;
+  margin-top: 30px; /* Default top margin */
+  margin-bottom: 30px; /* Increased space below heading */
+  padding-bottom: 12px; /* Increased padding for border */
+  border-bottom: 1px solid #4b5563;
+  text-align: left; /* Default left align for stacked */
+}
+/* First h2 in stacked layout needs less top margin */
+.service-section:first-of-type h2 {
+    margin-top: 0;
+}
+
+
+/* --- Section Styling --- */
+.service-section {
+  margin-bottom: 40px; /* Increased space between stacked sections */
+  padding-bottom: 20px; /* Increased padding */
+}
+.service-section:last-of-type {
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+/* --- Form Elements --- */
+input[type="text"],
+textarea,
+select {
+  width: 100%;
+  padding: 14px 18px;
+  margin-bottom: 18px;
+  border-radius: 10px;
+  border: 1px solid #4b5563;
+  font-size: 1rem;
+  background-color: #2d3748;
+  color: #e0e0e0;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+textarea { resize: vertical; min-height: 80px; }
+input[type="text"]:focus, textarea:focus, select:focus {
+  outline: none;
+  border-color: #6366f1;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.3);
+}
+select {
+  background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23ADB5BD%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E');
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  background-size: 0.8em auto;
+  padding-right: 2.5rem;
+  cursor: pointer;
+}
+
+/* --- Buttons --- */
+button {
+  width: 100%;
+  padding: 14px 20px;
+  margin: 12px 0; /* Slightly more margin */
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: linear-gradient(135deg, #6366f1 0%, #818cf8 100%);
+  color: #ffffff;
+  box-shadow: 0 4px 10px rgba(99, 102, 241, 0.3), 0 1px 3px rgba(0,0,0,0.2);
+  letter-spacing: 0.5px;
+}
+button:hover {
+  background: linear-gradient(135deg, #4f46e5 0%, #6366f1 100%);
+  box-shadow: 0 7px 15px rgba(79, 70, 229, 0.4), 0 3px 6px rgba(0,0,0,0.2);
+  transform: translateY(-2px);
+}
+button:active {
+  transform: translateY(0px);
+  box-shadow: 0 2px 5px rgba(79, 70, 229, 0.3), 0 1px 2px rgba(0,0,0,0.15);
+}
+button:disabled {
+  background: #4b5563;
+  box-shadow: none;
+  cursor: not-allowed;
+  transform: translateY(0);
+  opacity: 0.7;
+}
+
+/* --- Custom File Input --- */
+.file-input-label {
+  display: inline-block;
+  width: 100%;
+  padding: 14px 20px;
+  margin: 12px 0 5px 0; /* Adjusted margin */
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: #525f7f;
+  color: #e0e0e0;
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(82, 95, 127, 0.3);
+}
+.file-input-label:hover { background: #616f94; box-shadow: 0 4px 8px rgba(82, 95, 127, 0.4); }
+input[type="file"] { opacity: 0; position: absolute; width: 0.1px; height: 0.1px; overflow: hidden; z-index: -1; }
+.file-name {
+  font-size: 0.85rem;
+  color: #9ca3af;
+  margin-top: 5px; /* Added slight top margin */
+  margin-bottom: 18px; /* Increased space below file name */
+  font-style: italic;
+  text-align: center;
+  word-break: break-all;
+}
+
+/* --- Result Paragraphs --- */
+p {
+  font-size: 1rem;
+  color: #d1d5db;
+  line-height: 1.6;
+  margin: 12px 0; /* Increased margin */
+  text-align: left;
+  word-wrap: break-word;
+}
+/* Specific styling for confidence score if needed */
+p.confidence-score {
+    text-align: center;
+    font-style: italic;
+    color: #adb5bd;
+    margin-top: -10px; /* Pull it closer to the language */
+    margin-bottom: 15px;
+}
+
+/* --- Error Message Styling --- */
+.error-message {
+  color: #f87171;
+  font-weight: 500;
+  background-color: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  padding: 12px 18px; /* Increased padding */
+  border-radius: 8px;
+  margin-top: 18px; /* Increased margin */
+  text-align: center;
+}
+
+/* --- Audio Player --- */
+audio { width: 100%; margin-top: 20px; border-radius: 8px; }
+
+/* --- Inline Controls (Select + Button) --- */
+.inline-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 18px; /* Increased margin */
+}
+
+/* --- Image Service Block Styling --- */
+.image-service-block {
+    margin-bottom: 30px;
+    padding: 25px; /* Increased padding */
+    background-color: rgba(45, 55, 72, 0.4); /* Slightly more prominent background */
+    border-radius: 12px;
+    border: 1px solid #313c52; /* Add subtle border */
+}
+.image-service-block:last-of-type { margin-bottom: 0; }
+
+/* --- Translation Controls within STT --- */
+.translation-controls {
+    margin-top: 25px; /* More space above */
+    border-top: 1px solid #4b5563;
+    padding-top: 25px; /* More space below border */
+}
+/* Sub-heading for translation controls */
+.translation-controls h4 {
+    font-size: 1.1rem;
+    color: #a5b4fc; /* Lighter accent color */
+    margin-bottom: 15px;
+    text-align: left;
+    font-weight: 500;
+}
+
+/* --- Main Content Area Layout --- */
+.main-content-area { display: block; } /* Default stack */
+
+
+/* --- Responsive Design --- */
+
+/* Tablet */
+@media (min-width: 600px) {
+    .inline-controls {
+        flex-direction: row;
+        align-items: center;
+    }
+    .inline-controls select { flex: 1; margin-bottom: 0; }
+    .inline-controls button {
+        flex-shrink: 0; width: auto; padding-left: 30px; padding-right: 30px;
+        margin-left: 12px; /* Slightly more space */
+        margin-top: 0; margin-bottom: 0;
+    }
+}
+
+/* Small Desktop / Large Tablet */
+@media (max-width: 1199px) and (min-width: 769px) { /* Adjusted max breakpoint */
+    .App { max-width: 850px; }
+}
+
+/* --- Wider Screens Layout (3 Columns) --- */
+@media (min-width: 1200px) { /* Increased breakpoint for 3 columns */
+    .App {
+        max-width: 1600px; /* Wider max-width */
+        padding: 40px 50px; /* More padding */
+    }
+
+    .main-content-area {
+        display: flex;
+        justify-content: space-between;
+        gap: 45px; /* Increased gap between columns */
+        align-items: flex-start;
+    }
+
+    .service-section {
+        flex: 1;
+        margin-bottom: 0;
+        padding-bottom: 0;
+        /* Add internal padding for breathing room within columns */
+        padding-left: 20px;
+        padding-right: 20px;
+         /* Add subtle vertical separators */
+        border-left: 1px solid #374151;
+    }
+     /* Remove border/padding from the first column */
+    .service-section:first-of-type {
+        border-left: none;
+        padding-left: 0;
+    }
+     /* Adjust last column's right padding if desired */
+     .service-section:last-of-type {
+         padding-right: 0;
+     }
+
+
+    /* --- Center Section Headings (h2) in Columns --- */
+    .service-section h2 {
+        margin-top: 0; /* Reset top margin */
+        text-align: center; /* Center align */
+        border-bottom: 1px solid transparent; /* Optional: remove bottom border in columns */
+        /* Or keep border but center it: */
+        /* border-image: linear-gradient(to right, transparent, #4b5563, transparent) 1; */
+        padding-left: 15px; /* Add padding to center content under heading */
+        padding-right: 15px;
+    }
+}
+
+
+/* --- Minor Adjustments for Smaller Screens --- */
+@media (max-width: 768px) {
+  .App { padding: 25px 20px; border-radius: 12px; }
+  h1 { font-size: 1.8rem; margin-bottom: 25px; }
+  h2 { font-size: 1.3rem; margin-top: 30px; margin-bottom: 20px; text-align: left; } /* Ensure left align */
+   /* Ensure first h2 still has less top margin */
+   .service-section:first-of-type h2 { margin-top: 0; }
+
+  input[type="text"], textarea, select, button, .file-input-label {
+    font-size: 0.95rem; padding: 12px 15px;
+  }
+  p, .file-name { font-size: 0.9rem; }
+  .image-service-block { padding: 15px; }
+  .translation-controls h4 { font-size: 1rem; }
+}
